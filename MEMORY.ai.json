@@ -5,3 +5,14 @@
   "active": ["ai-memory"],
   "last": "2026-09-26: Design locked. Dual branch (main=AI compact JSON, obsidian=human Markdown). Files being created."
 }
+{
+  "v": 1,
+  "p": "Jimmy | WIB | free mobile AI, low-token preferred",
+  "g": ["Build dual-branch long-term memory system"],
+  "f": ["Compact AI format", "Offline Obsidian readable", "Process inbox only by command", "Human edits on obsidian = source of truth for human content; AI on main for compact memory; surface conflicts"],
+  "active": ["ai-memory"],
+  "log": [
+    "2026-09-26: Design locked. Dual branch finalized.",
+    "2026-09-26: v1 schema + log array + conflict rule added."
+  ]
+}
