@@ -9,6 +9,11 @@ Dual-branch long-term memory system optimized for free mobile AI.
 | `main`     | Low-token AI working memory      | Compact JSON    | AI only        |
 | `obsidian` | Human-readable + offline input   | Clean Markdown  | Human + AI     |
 
+## Conflict rule
+Human edits on `obsidian` are source of truth for human-readable content.  
+AI updates on `main` are source of truth for compact working memory.  
+When both change the same fact, AI must surface the conflict instead of silently overwriting.
+
 ## How to use
 
 **Fresh chat**
