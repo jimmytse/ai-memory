@@ -3,8 +3,9 @@
 **Date:** 2026-09-26
 
 - Finalized dual-branch design
-- AI side (`main`): compact JSON format
-- Human side (`obsidian`): clean Markdown for Obsidian
-- Inbox only processed on command
-- One compact file per project
-- Ready to create the first files
+- Implemented v1 improvements:
+  - Added schema version (`v: 1`)
+  - Converted single `last` field → `log` array
+  - Added explicit conflict rule
+- Updated both branches (main + obsidian)
+- Ready for testing load + process inbox flow
