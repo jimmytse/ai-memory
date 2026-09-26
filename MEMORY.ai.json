@@ -1,7 +1,0 @@
-{
-  "p": "Jimmy | WIB | free mobile AI, low-token preferred",
-  "g": ["Build dual-branch long-term memory system"],
-  "f": ["Compact AI format", "Offline Obsidian readable", "Process inbox only by command"],
-  "active": ["ai-memory"],
-  "last": "2026-09-26: Design locked. Dual branch (main=AI compact JSON, obsidian=human Markdown). Ready for initial files."
-}
