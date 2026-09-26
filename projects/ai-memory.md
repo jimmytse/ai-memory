@@ -9,12 +9,16 @@
 - One compact file per project on AI side
 - Inbox processed only by command
 - AI writes short summaries to the human side
+- Human edits on obsidian = source of truth for human content; AI on main for compact; surface conflicts
 
 ## Next Steps
-- [ ] Create initial files on both branches
 - [ ] Test loading compact memory from a fresh Grok chat
 - [ ] Test “process inbox” flow
 - [ ] Decide how to archive old inbox notes
+
+## Log
+- 2026-09-26: Design finalized, repo renamed to ai-memory
+- 2026-09-26: v1 schema + log + conflict rule implemented
 
 ## Notes
 Created 2026-09-26.
