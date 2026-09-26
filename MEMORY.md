@@ -13,6 +13,7 @@
 - Human side (`obsidian`) uses clean Markdown for offline reading in Obsidian
 - Inbox is processed only when commanded (“process inbox” or “check offline notes”)
 - AI writes short summaries back to this branch for offline reading
+- Human edits on obsidian = source of truth for human content; AI on main for compact memory; surface conflicts
 
 ## Active Projects
 - [[projects/ai-memory]]
