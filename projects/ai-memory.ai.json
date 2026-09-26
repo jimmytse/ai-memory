@@ -1,22 +1,4 @@
 {
-  "name": "ai-memory",
-  "status": "setup",
-  "goal": "Low-token dual-branch memory for free mobile AI + offline Obsidian",
-  "key": [
-    "main = compact JSON for AI only",
-    "obsidian = clean Markdown for human + offline input",
-    "Inbox processed only on command (process inbox / check offline notes)",
-    "AI writes short summaries to obsidian side",
-    "One compact file per project"
-  ],
-  "next": [
-    "Finish initial files on both branches",
-    "Test loading MEMORY.ai.json + project file from fresh chat",
-    "Test process inbox flow"
-  ],
-  "last": "2026-09-26 design finalized, repo renamed to ai-memory"
-}
-{
   "v": 1,
   "name": "ai-memory",
   "status": "setup",
