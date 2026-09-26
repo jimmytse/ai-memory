@@ -1,20 +1,18 @@
-# Project: ai-memory
+# Core Memory
 
-**Status:** Setup  
-**Goal:** Low-token dual-branch memory system for free mobile AI + offline Obsidian reading
+## Profile
+- Name: Jimmy
+- Timezone: WIB (UTC+7)
+- Preference: Free mobile AI, low-token interactions
 
-## Key Decisions
-- `main` branch → compact JSON (AI only, lowest tokens)
-- `obsidian` branch → clean Markdown (human readable + offline input)
-- One compact file per project on AI side
-- Inbox processed only by command
-- AI writes short summaries to the human side
+## Active Goals
+- Build dual-branch long-term memory system (`ai-memory`)
 
-## Next Steps
-- [ ] Create initial files on both branches
-- [ ] Test loading compact memory from a fresh AI chat
-- [ ] Test “process inbox” flow
-- [ ] Decide how to archive old inbox notes
+## Key Facts
+- AI side (`main`) uses compact JSON
+- Human side (`obsidian`) uses clean Markdown for offline reading in Obsidian
+- Inbox is processed only when commanded (“process inbox” or “check offline notes”)
+- AI writes short summaries back to this branch for offline reading
 
-## Notes
-Created 2026-09-26.
+## Active Projects
+- [[projects/ai-memory]]
