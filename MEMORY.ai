@@ -26,6 +26,14 @@
 - Do not casually merge
 - Promotion from Obsidian to main requires review and explicit approval
 
+[POINTER] MEMORY.ai → this file
+[POINTER] SYSTEM.ai → advanced rules (load only when needed)
+[POINTER] projects/active.ai → project index (includes general as an entry, same as any other project)
+[POINTER] projects/general.ai → non-project-scoped durable facts
+[POINTER] projects/*.ai → detailed project memory
+[POINTER] inbox/AI_Inbox.ai → AI proposals
+[POINTER] inbox/mirror_log.ai → main↔obsidian sync ledger
+
 [ACTIVE] ai-memory
 [LOG] 2026-09-26: Design locked. Dual branch finalized.
 [LOG] 2026-09-26: v1 schema + log array + conflict rule added.
