@@ -1,0 +1,10 @@
+[PROFILE] Jimmy | WIB | free mobile AI, low-token preferred
+[GOAL] Build dual-branch long-term memory system
+[RULE] Compact tagged text format (no JSON)
+[RULE] Offline Obsidian readable
+[RULE] Process inbox only by command
+[RULE] Human edits on obsidian = source of truth for human content; AI on main for compact memory; surface conflicts
+[ACTIVE] ai-memory
+[LOG] 2026-09-26: Design locked. Dual branch finalized.
+[LOG] 2026-09-26: v1 schema + log array + conflict rule added.
+[LOG] 2026-09-27: Switched main format from JSON to tagged fact lines.
