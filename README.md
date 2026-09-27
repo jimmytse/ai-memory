@@ -16,19 +16,8 @@ When both change the same fact, AI must surface the conflict instead of silently
 
 One entry per line. Extra tags can be added as needed. No JSON.
 
-## How to use
-
-**Fresh chat**
-- Load `MEMORY.ai` + relevant file from `projects/`
-
-**Process offline notes**
-- Command: `process inbox` or `check offline notes`
-
-**After important work**
-- AI writes short summary to the `obsidian` branch
-
 ## Main branch format (tagged lines)
-
+```text
 [FACT] confirmed durable fact
 [REFERENCE] useful reference
 [RULE] durable rule
@@ -40,4 +29,16 @@ One entry per line. Extra tags can be added as needed. No JSON.
 [ACTIVE] current project(s)
 [NEXT] next action
 [LOG] YYYY-MM-DD: event
+```
+
+## How to use
+
+**Fresh chat**
+- Load `MEMORY.ai` + relevant file from `projects/`
+
+**Process offline notes**
+- Command: `process inbox` or `check offline notes`
+
+**After important work**
+- AI writes short summary to the `obsidian` branch
 
