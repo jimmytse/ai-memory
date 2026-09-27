@@ -14,8 +14,6 @@ Human edits on `obsidian` are source of truth for human-readable content.
 AI updates on `main` are source of truth for compact working memory.  
 When both change the same fact, AI must surface the conflict instead of silently overwriting.
 
-One entry per line. Extra tags can be added as needed. No JSON.
-
 ## Main branch format (tagged lines)
 ```text
 [FACT] confirmed durable fact
@@ -30,6 +28,9 @@ One entry per line. Extra tags can be added as needed. No JSON.
 [NEXT] next action
 [LOG] YYYY-MM-DD: event
 ```
+
+One entry per line. Extra tags can be added as needed. No JSON.
+
 
 ## How to use
 
