@@ -19,6 +19,7 @@ When both change the same fact, AI must surface the conflict instead of silently
 [FACT] confirmed durable fact
 [REFERENCE] useful reference
 [RULE] durable rule
+[COMMAND] natural-language trigger → action
 [POINTER] topic → file
 [STATUS] topic → status
 [PREFERENCE] durable preference
