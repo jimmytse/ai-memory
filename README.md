@@ -28,6 +28,7 @@ One entry per line. Extra tags can be added as needed. No JSON.
 - AI writes short summary to the `obsidian` branch
 
 ## Main branch format (tagged lines)
+
 [FACT] confirmed durable fact
 [REFERENCE] useful reference
 [RULE] durable rule
