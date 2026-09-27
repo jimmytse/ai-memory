@@ -10,6 +10,16 @@
 [COMMAND] Remember this: [something] — Save only durable, future-relevant information. No secrets.
 [COMMAND] Check my memory — Inspect for duplicates, conflicts, staleness, broken pointers. Report before changing.
 
+[RULE] Fresh Chat Protocol:
+- Read this file (MEMORY.md)
+- Load only the single most relevant project file (via projects/active.md). If not project-specific → load projects/general.md
+- Check inbox/mirror_log.md for pending/conflict entries — reconcile first if found (see Reconciliation). Skip rest of step if empty or all-done
+- Check inbox/ (AI_Inbox.md / USER_Inbox.md) only if pending decisions or continuation are involved
+- Do not load Obsidian unless task explicitly involves Obsidian or an Obsidian command/review is requested
+- Do not load every project
+- Do not load SYSTEM.md unless a trigger condition is met (see SYSTEM.md)
+- Do not treat Obsidian notes as authoritative
+
 [ACTIVE] ai-memory
 [LOG] 2026-09-26: Design locked. Dual branch finalized.
 [LOG] 2026-09-26: v1 schema + log array + conflict rule added.
