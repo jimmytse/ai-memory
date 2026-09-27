@@ -4,6 +4,10 @@
 [RULE] Offline Obsidian readable
 [RULE] Process inbox only by command
 [RULE] Human edits on obsidian = source of truth for human content; AI on main for compact memory; surface conflicts
+[RULE] Start my memory — Read this file. Load only relevant project + inbox context.
+[RULE] Continue my [project] — Load the matching project file and continue from latest state.
+[RULE] Remember this: [something] — Save only durable, future-relevant information. No secrets.
+[RULE] Check my memory — Inspect for duplicates, conflicts, staleness, broken pointers. Report before changing.
 [ACTIVE] ai-memory
 [LOG] 2026-09-26: Design locked. Dual branch finalized.
 [LOG] 2026-09-26: v1 schema + log array + conflict rule added.
