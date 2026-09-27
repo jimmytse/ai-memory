@@ -1,5 +1,7 @@
 [PROFILE] Jimmy | WIB | free mobile AI, low-token preferred
 [GOAL] Build dual-branch long-term memory system
+[GOAL] Keep durable memory accurate, compact, and easy to load at the start of a fresh chat
+[RULE] Golden Rule — Store only information that can change a future answer. Store it once, in the lowest appropriate file
 [RULE] Compact tagged text format (no JSON)
 [RULE] Offline Obsidian readable
 [RULE] Process inbox only by command
@@ -31,6 +33,22 @@
 - Replace obsolete facts; do not accumulate versions
 - Keep detail in project files, not MEMORY.ai
 - Proposed changes go only to inbox/AI_Inbox.ai
+
+[RULE] Sync Model (two independent legs):
+- obsidian → main (promotion): requires explicit user approval. Reviewed via inbox/AI_Inbox.ai
+- main → obsidian (reference sync): not promotion, does not change authority. Triggered immediately after each approved promotion (not on a timer) — the AI writes a reference copy of the newly-approved fact into the matching obsidian project folder as part of the same approval action
+- Vault ↔ obsidian branch transport: handled entirely by the Git Vault Sync plugin (pull on open + every 60 min). Not an AI responsibility
+
+[RULE] Staleness Thresholds:
+- mirror_log.ai pending entries: flag if older than 24 hours
+- Project files (projects/<name>.ai): flag if untouched 90+ days (flag only, never auto-archive)
+- Inbox entries (AI or USER): flag if undecided 14+ days
+- mirror_log.ai done entries: prune after 30 days
+
+[PREFERENCE] Mobile-friendly, free-tier-first, simple, low-token design
+[RULE] GitHub repo is the authoritative store for main
+[RULE] Never store passwords, tokens, API keys, or secrets
+[RULE] Preserve approved information; resolve contradictions before updating
 
 [POINTER] MEMORY.ai → this file
 [POINTER] SYSTEM.ai → advanced rules (load only when needed)
