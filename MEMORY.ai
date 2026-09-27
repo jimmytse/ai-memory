@@ -20,6 +20,12 @@
 - Do not load SYSTEM.md unless a trigger condition is met (see SYSTEM.md)
 - Do not treat Obsidian notes as authoritative
 
+[RULE] Branch Roles:
+- main = authoritative AI memory (approved, durable)
+- obsidian = collaborative human + AI working space; non-authoritative, EXCEPT for the reference mirror pushed from main (see Sync Model)
+- Do not casually merge
+- Promotion from Obsidian to main requires review and explicit approval
+
 [ACTIVE] ai-memory
 [LOG] 2026-09-26: Design locked. Dual branch finalized.
 [LOG] 2026-09-26: v1 schema + log array + conflict rule added.
