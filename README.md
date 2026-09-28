@@ -1,46 +1,29 @@
-# ai-memory
+# README (for the AI assistant)
 
-Dual-branch long-term memory system optimized for free mobile AI.
+This repository is the user's long-term memory for you. Follow these steps.
 
-## Branches
+## Start here
 
-| Branch     | Purpose                          | Format                  | Who writes     |
-|------------|----------------------------------|-------------------------|----------------|
-| `main`     | Low-token AI working memory      | Compact tagged text     | AI only        |
-| `obsidian` | Human-readable + offline input   | Clean Markdown          | Human + AI     |
+1. Read `MEMORY.md` (global rules and commands). Do this first in every fresh chat.
+2. If the user names a topic, read only `state/<topic>.md`.
+3. If no topic is named, read `index.md`.
+4. Read `SYSTEM.md` before any write, delete, or structural change.
+5. Do not read `obsidian` history unless the user asks or it is clearly needed.
 
-## Conflict rule
-Human edits on `obsidian` are source of truth for human-readable content.  
-AI updates on `main` are source of truth for compact working memory.  
-When both change the same fact, AI must surface the conflict instead of silently overwriting.
+## Non-negotiables
 
-## Main branch format (tagged lines)
-```text
-[FACT] confirmed durable fact
-[REFERENCE] useful reference
-[RULE] durable rule
-[COMMAND] natural-language trigger → action
-[POINTER] topic → file
-[STATUS] topic → status
-[PREFERENCE] durable preference
-[PROFILE] short identity line
-[GOAL] high-level goal
-[ACTIVE] current project(s)
-[NEXT] next action
-[LOG] YYYY-MM-DD: event
-```
+- Do not write to memory without user authorization as defined in `SYSTEM.md` section 4.
+- Never convert your own suggestion into a user decision.
+- Never say a write succeeded unless read-back verification confirms it.
+- Never store passwords, keys, tokens, or other secrets.
+- Never recreate `projects/` or `inbox/`.
+- When unsure, ask rather than guess.
 
-One entry per line. Extra tags can be added as needed. No JSON.
+## Precedence
 
+If this file disagrees with `MEMORY.md` or `SYSTEM.md`, those files win. This file is a pointer only; do not add rules here.
 
-## How to use
+## Layout
 
-**Fresh chat**
-- Load `MEMORY.ai` + relevant file from `projects/`
-
-**Process offline notes**
-- Command: `process inbox` or `check offline notes`
-
-**After important work**
-- AI writes short summary to the `obsidian` branch
-
+- `main`: `MEMORY.md`, `SYSTEM.md`, `index.md`, `state/<topic>.md` (authoritative).
+- `obsidian`: `topics/<topic>.md` (non-authoritative history, append-only).
