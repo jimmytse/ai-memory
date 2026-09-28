@@ -17,6 +17,7 @@ Compact bootstrap for a fresh, token-limited chat. Global rules only; detailed o
 3. If no topic is named, read `index.md`.
 4. Do not read unrelated state files or Obsidian history unless needed or requested.
 5. Resume from recorded state; do not make the user repeat information already recorded.
+6. Before any write, delete, or structural change, read **only the relevant section(s)** of `SYSTEM.md` for the command being executed. Do not load the entire file.
 
 ## Authority
 
