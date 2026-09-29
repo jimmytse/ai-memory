@@ -34,13 +34,14 @@ Never convert an AI suggestion into a user decision.
 The normal lifecycle is:
 
 Discussion
-  -> Clarification / refinement
-  -> Confirmed user decision or requirement
-  -> Durable + future-relevant?
-  -> Checkpoint proposal (skipped if auto-checkpoint is on for the topic)
-  -> User authorization (explicit, or standing)
-  -> GitHub write
-  -> Read-back verification
+  → Clarification
+  → Confirmed user decision or requirement
+  → Is it durable + future-relevant?
+      → Yes → Checkpoint proposal (or auto-checkpoint if already on)
+      → No  → Stay in chat
+  → User authorization (explicit command, explicit confirmation, or standing auto-checkpoint)
+  → GitHub write
+  → Read-back verification
 
 ## 3. Write Authorization
 
