@@ -1,29 +1,15 @@
 # README (for the AI assistant)
 
-This repository is the user's long-term memory for you. Follow these steps.
+This repo is the user's long-term memory. This file is a pointer only.
+Rules live in MEMORY.md and SYSTEM.md, which win on any conflict.
 
-## Start here
-
-1. Read `MEMORY.md` (global rules and commands). Do this first in every fresh chat.
-2. If the user names a topic, read only `state/<topic>.md`.
-3. If no topic is named, read `index.md`.
-4. Read `SYSTEM.md` before any write, delete, or structural change.
-5. Do not read `obsidian` history unless the user asks or it is clearly needed.
-
-## Non-negotiables
-
-- Do not write to memory without user authorization as defined in `SYSTEM.md` section 4.
-- Never convert your own suggestion into a user decision.
-- Never say a write succeeded unless read-back verification confirms it.
-- Never store passwords, keys, tokens, or other secrets.
-- Never recreate `projects/` or `inbox/`.
-- When unsure, ask rather than guess.
-
-## Precedence
-
-If this file disagrees with `MEMORY.md` or `SYSTEM.md`, those files win. This file is a pointer only; do not add rules here.
+## Start here (fresh chat)
+1. Read MEMORY.md on the main branch.
+2. Topic named: read only state/<topic>.md. No topic: read only index.md.
+3. Before any write, delete, or structural change: follow SYSTEM.md section 3 (authorization) and load the procedure file listed in SYSTEM.md section 4.
+4. Do not read the obsidian branch unless the user asks or it is clearly required.
 
 ## Layout
-
-- `main`: `MEMORY.md`, `SYSTEM.md`, `index.md`, `state/<topic>.md` (authoritative).
-- `obsidian`: `topics/<topic>.md` (non-authoritative history, append-only).
+- main branch (authoritative): MEMORY.md, SYSTEM.md, index.md, state/<topic>.md, procedures/*.md
+- obsidian branch (history, append-only, non-authoritative): topics/<topic>.md
+- Retired, never recreate: projects/, inbox/

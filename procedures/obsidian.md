@@ -11,7 +11,7 @@ Never promote history to authoritative state without sufficient confirmation and
 Each topic's `state/<topic>.md` header controls Obsidian writes for that topic. Missing lines mean defaults.
 
 `Obsidian:` mode
-- `ask` (default): append to `obsidian/topics/<topic>.md` only during an explicitly authorized checkpoint (command or confirmed proposal), and only when useful. Auto-checkpoints do not write Obsidian.
+- `ask` (default): append to `topics/<topic>.md` on the `obsidian` branch only during an explicitly authorized checkpoint (command or confirmed proposal), and only when useful. Auto-checkpoints do not write Obsidian.
 - `auto`: an append may accompany any authorized checkpoint, including auto-checkpoints, when useful. Appends are made only alongside a checkpoint, never on their own.
 - `off`: never append for this topic, even on an explicit checkpoint. The explicit "Organize [topic] notes" command is unaffected.
 
@@ -30,7 +30,7 @@ When the user asks to organize notes or produce a summary for a topic:
 1. Read the current `state/<topic>.md` (especially `Last-summarized`).
 2. Read the existing Obsidian file/summary if present.
 3. Produce **only the delta** since `Last-summarized` (or the full condensed summary if the marker is `none` or missing).
-4. Append the delta to `obsidian/topics/<topic>.md` (or update the `.summary.md` if that is the target).
+4. Append the delta to `topics/<topic>.md` on the `obsidian` branch (or update the `.summary.md` if that is the target).
 5. After successful write + read-back verification, update the state file's `Last-summarized:` line to today's date (this update still requires normal write authorization / is part of the same authorized Organize action).
 6. Report briefly what was appended and the new `Last-summarized` value.
 

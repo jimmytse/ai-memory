@@ -20,7 +20,7 @@ Set or clear the topic's `Obsidian-rules:` line, stored verbatim as one line. Ch
 
 ### Show me the full notes on [topic]
 Read:
-`obsidian/topics/<topic>.md`
+`topics/<topic>.md` on the `obsidian` branch
 If summary exists, use summary first and raw history when needed.
 
 ### Forget [topic]
