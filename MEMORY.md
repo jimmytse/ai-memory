@@ -59,6 +59,10 @@ Data: <path> (optional)
 
 Sections: ## Status ## Key decisions ## Open questions ## Next step
 Checkpoint, not transcript. Cap about 2 KB. Replace, don't append.
+Hard size limits (refuse the write if exceeded):
+- State body after the header lines ≤ 1800 characters.
+- Data file ≤ 7000 characters.
+Count characters before committing. Estimate is acceptable; exact count preferred when the tool can provide it.
 Open questions: max 3 lines, actionable only.
 Results the user accepted (a list or table) go in state/<t>.data.md: first line is the column header, then one row per item with source + date. Replace whole file, cap about 8 KB. Working or unaccepted candidates never go there.
 index.md Last-touch column records the date of the last verified checkpoint for that topic. Update it only on a successful verified write.
