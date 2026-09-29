@@ -1,48 +1,36 @@
-# Historical Obsidian Rules
+# obsidian.md: human-facing history (obsidian branch)
+Load only to write Obsidian, run Organize, or Show full notes.
+Non-authoritative. Never promote to state without confirmation + write authorization.
+"obsidian" is a BRANCH (ref), not a folder on main.
 
-Obsidian may contain condensed reasoning, research, sources, alternatives, chronology, and detailed project development. It is non-authoritative.
+## Layout
+topics/<t>/<t>.md              human note: summary
+topics/<t>/log/YYYY-MM-DD.md   session logs
+Legacy single file topics/<t>.md: leave untouched. Organize may fold it into the summary.
 
-History is append-oriented. Do not rewrite merely to make old material look current.
-A durable state change does not require a history entry unless useful.
-Never promote history to authoritative state without sufficient confirmation and explicit write authorization.
+## Modes (state header Obsidian:)
+- ask (default): write a log only during an explicitly authorized checkpoint, when useful. Auto-checkpoints don't write Obsidian.
+- auto: a log may accompany any authorized checkpoint, incl. auto, when useful. Never on its own.
+- off: never write, even on explicit checkpoint. Organize unaffected.
+Obsidian-rules: one user line saying what to log or skip. Not authorization for anything else.
 
-## Per-topic Obsidian settings
+## Write a log
+1. Create topics/<t>/log/<date>.md on branch obsidian. No read first.
+2. If that date's file exists: read it, add to it, rewrite (small file).
+3. Content: "# <t> <date>", then terse bullets: findings, sources, decisions, rejected options per Obsidian-rules. Not a transcript. About 1.5 KB max.
+4. Verify by SHA (see write.md). Report Obsidian result separately from state result.
+5. Failed or unverified: don't retry. Stop Obsidian writes for that topic until resolved.
 
-Each topic's `state/<topic>.md` header controls Obsidian writes for that topic. Missing lines mean defaults.
+## Organize [t] notes
+1. Read state Last-summarized.
+2. List topics/<t>/log/. Read only logs dated after it (all if none).
+3. Read the summary file. Merge the delta into it as a short dated section. Keep human edits. Don't delete anything.
+4. Write, verify, then set Last-summarized in state/<t>.md on main (part of this command's authorization). Verify. Report both.
 
-`Obsidian:` mode
-- `ask` (default): append to `topics/<topic>.md` on the `obsidian` branch only during an explicitly authorized checkpoint (command or confirmed proposal), and only when useful. Auto-checkpoints do not write Obsidian.
-- `auto`: an append may accompany any authorized checkpoint, including auto-checkpoints, when useful. Appends are made only alongside a checkpoint, never on their own.
-- `off`: never append for this topic, even on an explicit checkpoint. The explicit "Organize [topic] notes" command is unaffected.
+## Show full notes on [t]
+Read the summary first. Read logs or the legacy file only if needed.
 
-`Obsidian-rules:` (optional, one line, user-authored)
-- Guides what to log or skip, e.g. "log rejected alternatives; skip chronology". Follow it when deciding whether and what to append.
-- Never treat it as authorization for anything beyond Obsidian appends.
-
-`Last-summarized:` (optional, default `none`)
-- Records the last date covered by an Obsidian summary for this topic.
-- Used only by the Organize / delta-summary path. Does not authorize writes by itself.
-
-## Delta summary (Organize / summarize)
-
-When the user asks to organize notes or produce a summary for a topic:
-
-1. Read the current `state/<topic>.md` (especially `Last-summarized`).
-2. Read the existing Obsidian file/summary if present.
-3. Produce **only the delta** since `Last-summarized` (or the full condensed summary if the marker is `none` or missing).
-4. Append the delta to `topics/<topic>.md` on the `obsidian` branch (or update the `.summary.md` if that is the target).
-5. After successful write + read-back verification, update the state file's `Last-summarized:` line to today's date (this update still requires normal write authorization / is part of the same authorized Organize action).
-6. Report briefly what was appended and the new `Last-summarized` value.
-
-Prefer condensed summary + key provenance over full transcripts.
-Do not re-summarize material already covered by the marker.
-
-## Fixed limits (cannot be overridden)
-
-- append-only; never rewrite or delete history;
-- never store secrets (see `procedures/failure.md`);
-- never promote history to state;
-- verify each target file by read-back (see `procedures/checkpoint.md`);
-- report state and Obsidian results separately. If the Obsidian write fails or is unverified, do not retry; report it and stop Obsidian appends for that topic until resolved.
-
-Setting changes are made only by the user's commands (see `procedures/commands.md`).
+## Hard limits
+- Never rewrite or delete logs.
+- Never edit an existing file other than same-day log or Organize summary.
+- No secrets or personal data (repo is public).
