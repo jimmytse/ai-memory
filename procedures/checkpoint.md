@@ -3,17 +3,15 @@
 ## Checkpoint Procedure
 
 When a checkpoint is authorized:
-1. Read current state file if it exists.
-2. Determine latest confirmed state.
-3. Replace superseded info rather than accumulating a transcript.
-4. Preserve uncertainty explicitly.
-5. Update index if topic status/routing/meaningful update changed.
-6. Obsidian: follow the topic's `Obsidian:` setting and `Obsidian-rules:` line (see `procedures/obsidian.md`). Append only when useful detail/provenance/reasoning/alternatives/chronology would otherwise be lost.
-7. For genuinely new topic, create state file and index row.
-8. Write required changes once.
-9. Capture commit SHA and file SHA when available.
-10. Read back exact target files and verify intended content.
-11. Report briefly what was saved and whether verification succeeded.
+
+1. Read the current `state/<topic>.md` (if it exists).
+2. Determine the latest confirmed state. Replace superseded information; do not accumulate a transcript. Preserve uncertainty explicitly.
+3. Soft ceiling ≈ 250 words. Condense if needed.
+4. Update `index.md` only if status, routing, or last-updated meaningfully changed.
+5. Obsidian: follow the topic’s `Obsidian:` setting and `Obsidian-rules:` (see `procedures/obsidian.md`). Append only when useful detail would otherwise be lost.
+6. Write the required files once.
+7. Read back the exact target file(s) and verify the intended content.
+8. Report briefly: what was saved + verification status (VERIFIED / PENDING_VERIFICATION / FAILED).
 
 A checkpoint is a current-state snapshot, not a transcript.
 
