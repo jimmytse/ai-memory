@@ -44,12 +44,15 @@ Preferred structure:
 Auto-checkpoint: on|off (default off)
 Obsidian: ask|auto|off (default ask)
 Obsidian-rules: <optional one line of user-set rules>
+Last-summarized: none | YYYY-MM-DD
 ## Status
 ## Key decisions
 ## Open questions
 ## Next step
 
 A state file is a checkpoint, not a transcript. Keep only the minimum information needed to resume accurately. Soft ceiling: \~250 words. Prefer replacing sections over appending. Condense when necessary without losing important state.
+
+`Last-summarized` marks the last date covered by an Obsidian summary for this topic. Use `none` if no summary exists yet. The AI uses it only when producing a delta summary; it does not authorize any write by itself.
 
 ## Commands
 
