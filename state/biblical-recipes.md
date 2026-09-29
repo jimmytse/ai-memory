@@ -1,6 +1,7 @@
 Auto-checkpoint: off
 Obsidian: ask
 Obsidian-rules: 
+Last-summarized: none
 
 ## Status
 ACTIVE — Develop truthful, nutritious, practical modern recipes inspired by biblical or biblical-era foods, adapted to ingredients readily available and preferably growable in Indonesia.
