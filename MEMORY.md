@@ -1,89 +1,42 @@
-# MEMORY.md - Main Branch
-
-Compact bootstrap for a fresh, token-limited chat. Global rules only; detailed operating procedures live in `SYSTEM.md` and the `procedures/` folder.
+# MEMORY
+AI-only memory. Read this first in every fresh chat.
 
 ## Branches
+- main: authoritative. MEMORY.md, index.md, state/<t>.md, procedures/*.md
+- obsidian: human history, topics/<t>/. Non-authoritative; never overrides state.
+- projects/ and inbox/ are retired. Never recreate.
 
-- **main**: authoritative AI memory - `MEMORY.md`, `SYSTEM.md`, `index.md`, `state/<topic>.md`, `procedures/*.md`.
-- **obsidian**: non-authoritative history/research - `topics/<topic>.md` and optional summaries.
-- Current truth comes from the latest sufficiently confirmed information in `main/state/`.
-- Obsidian history never silently overrides current state.
-- `projects/` and `inbox/` are retired; never recreate them.
+## Fresh chat
+1. Read this file.
+2. Topic named: read only state/<t>.md. Else: read only index.md.
+3. Resume from it. Don't make the user repeat recorded info.
+4. Don't read obsidian unless asked or clearly needed.
+Stop as soon as you can answer.
 
-## Fresh Chat
+## Precedence
+1. User's latest statement in this chat. 2. state/<t>.md. 3. Earlier state. 4. Obsidian.
+Detail or recency of a document doesn't override confirmed state.
+Conflict or unclear intent: ask, don't guess.
 
-Do this in order, and stop as soon as you can answer the user:
+## Write rules
+- Write only with authorization: explicit command, confirmed proposal, or standing Auto-checkpoint on for that topic.
+- Brainstorming, tentative or rejected ideas, and AI suggestions are not memory. Never turn an AI suggestion into a user decision.
+- Durable = confirmed and affects future work. Otherwise stay in chat.
+- Durable change and no authorization: propose once, "Checkpoint-worthy: <line>. Save?", then wait.
+- Smallest necessary change.
+- Repo is public: never store secrets (passwords, keys, tokens, payment info) or personal/sensitive data.
+- Never claim a write succeeded unless verified. Never claim exact token counts without a reliable measure.
+- Context-risk warnings never authorize writes.
 
-1. Read this file (`MEMORY.md`).
-2. If the user names a topic → read only `state/<topic>.md`.
-3. If no topic is named → read only `index.md`.
-4. Resume from that state. Do not make the user repeat recorded information.
-5. Before any write, delete, or structural change → load **only** the single relevant procedure file listed in `SYSTEM.md` §4. Never load every procedure file.
-
-Do not read unrelated state files or Obsidian history unless the user asks or it is clearly required for the current reply.
-
-## Authority
-
-When information differs, use this order:
-
-1. Latest explicit user statement in the current chat.
-2. Latest confirmed `state/<topic>.md`.
-3. Earlier confirmed state/history.
-4. Obsidian historical notes.
-
-Current-chat information controls the conversation, but does **not** automatically authorize a memory write. If intent is unclear, ask rather than guess.
-
-## State Files
-
-Each topic has one authoritative checkpoint:
-
-`state/<topic>.md`
-
-Preferred structure:
-
-Auto-checkpoint: on|off (default off)
-Obsidian: ask|auto|off (default ask)
-Obsidian-rules: <optional one line of user-set rules>
-Last-summarized: none | YYYY-MM-DD
-## Status
-## Key decisions
-## Open questions
-## Next step
-
-A state file is a checkpoint, not a transcript. Keep only the minimum information needed to resume accurately. Soft ceiling: \~250 words. Prefer replacing sections over appending. Condense when necessary without losing important state.
-
-`Last-summarized` marks the last date covered by an Obsidian summary for this topic. Use `none` if no summary exists yet. The AI uses it only when producing a delta summary; it does not authorize any write by itself.
+## Procedure map (load only the one needed)
+- checkpoint, save, auto-checkpoint, verify, failure: procedures/write.md
+- obsidian log or summary: procedures/obsidian.md
+- forget, merge/split/rename topic, system change: procedures/admin.md
 
 ## Commands
+Continue [t] | What am I working on | Save a checkpoint for [t] | Auto-checkpoint [t] on/off | Obsidian [t] ask/auto/off | Obsidian [t] rules: <text> or clear | Show full notes on [t] | Forget [t] | Organize [t] notes
 
-Before any command that writes or deletes, follow the relevant procedure file (see `SYSTEM.md` section 4).
-
-- **Continue [topic]** - read its state and resume.
-- **What am I working on** - read `index.md` and summarize active topics.
-- **Save a checkpoint for [topic]** - perform the checkpoint procedure immediately (`procedures/checkpoint.md`).
-- **Auto-checkpoint [topic] on / off** - set or clear the standing authorization (`procedures/auto-checkpoint.md`).
-- **Obsidian [topic] ask / auto / off** - set how Obsidian history is written (`procedures/obsidian.md`).
-- **Obsidian [topic] rules: <text>** (or **rules clear**) - set or clear the topic's one-line Obsidian rules.
-- **Show me the full notes on [topic]** - read the Obsidian history; use its summary first when present.
-- **Forget [topic]** - confirm first, then follow `procedures/commands.md`.
-- **Organize [topic] notes** - produce a delta summary to Obsidian and advance `Last-summarized` (see `procedures/obsidian.md`).
-
-## Memory Rules
-
-- Discussion, brainstorming, tentative ideas, rejected alternatives, speculation, and unresolved points are not memory.
-- Never convert an AI suggestion into a user decision.
-- Durable memory must be sufficiently confirmed and materially relevant to future work.
-- Only the user's explicit authorization permits a memory write.
-- Authorization means one of: an explicit checkpoint command, an explicit confirmation of a checkpoint proposal, or a standing auto-checkpoint the user turned on for that topic.
-- A qualifying state change does **not** by itself authorize a write unless auto-checkpoint is on for that topic.
-- Auto-checkpoint covers only that topic's `state/<topic>.md` and its index row. Obsidian writes follow the topic's `Obsidian:` setting. Everything else still needs explicit authorization.
-- When a confirmed, durable, future-relevant change appears and no authorization is active, propose once and briefly:
-  > Checkpoint-worthy: <one line>. Save?
-  Then wait. Never write without an answer (or standing auto-checkpoint).
-- Context-risk warnings never authorize writes.
-- Make the smallest necessary change.
-- Never store passwords, keys, tokens, payment credentials, or other secrets.
-- Never claim a memory write succeeded unless read-back verification confirms it.
-- Never claim exact token/context measurements without a reliable measurement.
-- Keep the system mobile-friendly, low-token, and practical for Free-tier use.
-- The user is the sole author of authoritative memory; no approval queue or inbox is required.
+## State file format
+Header (one line each): Auto-checkpoint: on|off (default off) / Obsidian: ask|auto|off (default ask) / Obsidian-rules: <optional> / Last-summarized: none|YYYY-MM-DD
+Sections: ## Status ## Key decisions ## Open questions ## Next step
+Checkpoint, not transcript. Cap about 2 KB. Replace, don't append.
