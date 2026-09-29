@@ -1,22 +1,22 @@
-# Biblical Recipes — Indonesia Ingredients
+Auto-checkpoint: off
+Obsidian: ask
+Obsidian-rules: 
 
 ## Status
-ACTIVE
+ACTIVE — Develop truthful, nutritious, practical modern recipes inspired by biblical or biblical-era foods, adapted to ingredients readily available and preferably growable in Indonesia.
 
-## Current objective
-Develop truthful, nutritious, practical modern recipes inspired by foods documented in the Bible or strongly connected to biblical-era food traditions, adapted to ingredients readily available and preferably growable in Indonesia.
+## Key decisions
+- Always distinguish biblical text, historical interpretation, scientific evidence, and modern adaptation. Never present modern recipes as literal biblical recipes when the Bible does not give a complete recipe.
+- Prefer Indonesian ingredients; assess growability, affordability, sustainability, nutrition, preparation, food safety, and storage.
+- Avoid unsupported health/cure claims. Record quantities, servings, preparation, safety, substitutions, and reasons for important adaptations.
+- Developed so far:
+  - Ezekiel 4:9-inspired whole-grain/legume bread (whole wheat, barley, millet/jewawut, cooked mung beans, cooked lentils, yeast, salt; optional honey/oil). Modern adaptation only.
+  - Genesis 25:34-inspired mung-bean/lentil-style stew (mung beans, brown rice, tomato, greens, Indonesian aromatics). Biblical reference only, not a full recipe.
+- Safety: legumes must be properly prepared and fully cooked; never use raw or undercooked kidney/red beans.
 
-## Core rules
-- Clearly distinguish biblical text, historical interpretation, scientific evidence, and modern adaptation.
-- Do not present modern recipes as literal biblical recipes when the Bible does not provide a complete recipe.
-- Prefer Indonesian ingredients and assess growability, affordability, sustainability, nutrition, preparation, food safety, and storage.
-- Avoid unsupported health/cure claims.
-- Record quantities, servings, preparation, safety, substitutions, and reasons for important adaptations.
+## Open questions
+- Which additional biblical foods (grains, legumes, fruits, vegetables, herbs, oils, fermented foods, fish) are practical for Indonesian home growing?
+- How do fully self-sufficient Indonesian variants of the existing recipes compare on texture, nutrition, and practicality?
 
-## Developed recipes
-- Ezekiel 4:9-inspired whole-grain/legume bread using whole wheat, barley, millet/jewawut, cooked mung beans, cooked lentils, yeast, salt, optional honey/oil. This is a modern adaptation, not a literal ancient recipe.
-- Genesis 25:34-inspired mung-bean/lentil-style stew using mung beans, brown rice, tomato, greens, and Indonesian aromatics. The biblical passage supplies the food reference, not a complete recipe.
-- Future work should prioritize ingredients practical for Indonesian home growing and compare self-sufficient variants.
-
-## Important safety rule
-Legumes used in recipes must be properly prepared and fully cooked; do not use raw or undercooked kidney/red beans.
+## Next step
+Prioritize ingredients practical for Indonesian home growing and develop/compare self-sufficient variants of the existing recipes while keeping the biblical/adaptation distinction explicit.
