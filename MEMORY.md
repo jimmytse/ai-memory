@@ -12,12 +12,15 @@ Compact bootstrap for a fresh, token-limited chat. Global rules only; detailed o
 
 ## Fresh Chat
 
-1. Read `MEMORY.md`.
-2. If the user names a topic, read only `state/<topic>.md`.
-3. If no topic is named, read `index.md`.
-4. Do not read unrelated state files or Obsidian history unless needed or requested.
-5. Resume from recorded state; do not make the user repeat information already recorded.
-6. Before any write, delete, or structural change, read **only the relevant procedure file** listed in `SYSTEM.md` section 4. Do not load the entire SYSTEM.md or every procedure file.
+Do this in order, and stop as soon as you can answer the user:
+
+1. Read this file (`MEMORY.md`).
+2. If the user names a topic → read only `state/<topic>.md`.
+3. If no topic is named → read only `index.md`.
+4. Resume from that state. Do not make the user repeat recorded information.
+5. Before any write, delete, or structural change → load **only** the single relevant procedure file listed in `SYSTEM.md` §4. Never load every procedure file.
+
+Do not read unrelated state files or Obsidian history unless the user asks or it is clearly required for the current reply.
 
 ## Authority
 
@@ -46,7 +49,7 @@ Obsidian-rules: <optional one line of user-set rules>
 ## Open questions
 ## Next step
 
-A state file is a checkpoint, not a transcript. Keep only the minimum information needed to resume accurately. Soft ceiling: \~250 words; condense when necessary without losing important state.
+A state file is a checkpoint, not a transcript. Keep only the minimum information needed to resume accurately. Soft ceiling: \~250 words. Prefer replacing sections over appending. Condense when necessary without losing important state.
 
 ## Commands
 
@@ -71,6 +74,9 @@ Before any command that writes or deletes, follow the relevant procedure file (s
 - Authorization means one of: an explicit checkpoint command, an explicit confirmation of a checkpoint proposal, or a standing auto-checkpoint the user turned on for that topic.
 - A qualifying state change does **not** by itself authorize a write unless auto-checkpoint is on for that topic.
 - Auto-checkpoint covers only that topic's `state/<topic>.md` and its index row. Obsidian writes follow the topic's `Obsidian:` setting. Everything else still needs explicit authorization.
+- When a confirmed, durable, future-relevant change appears and no authorization is active, propose once and briefly:
+  > Checkpoint-worthy: <one line>. Save?
+  Then wait. Never write without an answer (or standing auto-checkpoint).
 - Context-risk warnings never authorize writes.
 - Make the smallest necessary change.
 - Never store passwords, keys, tokens, payment credentials, or other secrets.
