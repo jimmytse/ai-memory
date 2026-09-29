@@ -66,7 +66,7 @@ Before any command that writes or deletes, follow the relevant procedure file (s
 - **Obsidian [topic] rules: <text>** (or **rules clear**) - set or clear the topic's one-line Obsidian rules.
 - **Show me the full notes on [topic]** - read the Obsidian history; use its summary first when present.
 - **Forget [topic]** - confirm first, then follow `procedures/commands.md`.
-- **Organize [topic] notes** - follow `procedures/commands.md`; do not alter authoritative `main` state.
+- **Organize [topic] notes** - produce a delta summary to Obsidian and advance `Last-summarized` (see `procedures/obsidian.md`).
 
 ## Memory Rules
 
