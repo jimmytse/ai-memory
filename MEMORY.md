@@ -42,4 +42,4 @@ Continue [t] | What am I working on | Create new topic [t] | Save a checkpoint f
 Header (one line each): Auto-checkpoint: on|off (default off) / Obsidian: ask|auto|off (default ask) / Obsidian-rules: <optional> / Last-summarized: none|YYYY-MM-DD / Data: <path> (optional)
 Sections: ## Status ## Key decisions ## Open questions ## Next step
 Checkpoint, not transcript. Cap about 2 KB. Replace, don't append.
-Results the user accepted (a list or table) go in state/<t>.data.md: one row per item with source + date, replace whole file, cap about 8 KB. Working or unaccepted candidates never go there.
+Results the user accepted (a list or table) go in state/<t>.data.md: first line is the column header, then one row per item with source + date. Replace whole file, cap about 8 KB. Working or unaccepted candidates never go there.

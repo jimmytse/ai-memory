@@ -1,7 +1,7 @@
 # Topic Index
 
-| Topic | State file | Last updated | Status |
-|---|---|---|---|
-| Biblical Recipes — Indonesia Ingredients | state/biblical-recipes.md | 2026-09-28 | active |
+| Topic | State file | Status |
+|---|---|---|
+| Biblical Recipes — Indonesia Ingredients | state/biblical-recipes.md | active |
 
 Current continuation uses only `MEMORY.md`, `index.md`, and `state/<topic>.md` on `main`.
