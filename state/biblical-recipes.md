@@ -1,6 +1,7 @@
 Auto-checkpoint: off
 Obsidian: ask
 Obsidian-rules: 
+Last-checkpoint: none
 Last-summarized: none
 
 ## Status
