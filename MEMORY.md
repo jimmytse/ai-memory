@@ -1,10 +1,10 @@
 # MEMORY.md - Main Branch
 
-Compact bootstrap for a fresh, token-limited chat. Global rules only; detailed operating procedures live in `SYSTEM.md`.
+Compact bootstrap for a fresh, token-limited chat. Global rules only; detailed operating procedures live in `SYSTEM.md` and the `procedures/` folder.
 
 ## Branches
 
-- **main**: authoritative AI memory - `MEMORY.md`, `SYSTEM.md`, `index.md`, `state/<topic>.md`.
+- **main**: authoritative AI memory - `MEMORY.md`, `SYSTEM.md`, `index.md`, `state/<topic>.md`, `procedures/*.md`.
 - **obsidian**: non-authoritative history/research - `topics/<topic>.md` and optional summaries.
 - Current truth comes from the latest sufficiently confirmed information in `main/state/`.
 - Obsidian history never silently overrides current state.
@@ -17,7 +17,7 @@ Compact bootstrap for a fresh, token-limited chat. Global rules only; detailed o
 3. If no topic is named, read `index.md`.
 4. Do not read unrelated state files or Obsidian history unless needed or requested.
 5. Resume from recorded state; do not make the user repeat information already recorded.
-6. Before any write, delete, or structural change, read **only the relevant section(s)** of `SYSTEM.md` for the command being executed. Do not load the entire file.
+6. Before any write, delete, or structural change, read **only the relevant procedure file** listed in `SYSTEM.md` section 4. Do not load the entire SYSTEM.md or every procedure file.
 
 ## Authority
 
@@ -46,21 +46,21 @@ Obsidian-rules: <optional one line of user-set rules>
 ## Open questions
 ## Next step
 
-A state file is a checkpoint, not a transcript. Keep only the minimum information needed to resume accurately. Soft ceiling: ~250 words; condense when necessary without losing important state.
+A state file is a checkpoint, not a transcript. Keep only the minimum information needed to resume accurately. Soft ceiling: \~250 words; condense when necessary without losing important state.
 
 ## Commands
 
-Before any command that writes or deletes, follow the relevant procedure in `SYSTEM.md`.
+Before any command that writes or deletes, follow the relevant procedure file (see `SYSTEM.md` section 4).
 
 - **Continue [topic]** - read its state and resume.
 - **What am I working on** - read `index.md` and summarize active topics.
-- **Save a checkpoint for [topic]** - perform the checkpoint procedure immediately.
-- **Auto-checkpoint [topic] on / off** - set or clear the standing authorization for that topic's state file (see `SYSTEM.md` section 4).
-- **Obsidian [topic] ask / auto / off** - set how Obsidian history is written for that topic (see `SYSTEM.md` section 11).
+- **Save a checkpoint for [topic]** - perform the checkpoint procedure immediately (`procedures/checkpoint.md`).
+- **Auto-checkpoint [topic] on / off** - set or clear the standing authorization (`procedures/auto-checkpoint.md`).
+- **Obsidian [topic] ask / auto / off** - set how Obsidian history is written (`procedures/obsidian.md`).
 - **Obsidian [topic] rules: <text>** (or **rules clear**) - set or clear the topic's one-line Obsidian rules.
 - **Show me the full notes on [topic]** - read the Obsidian history; use its summary first when present.
-- **Forget [topic]** - confirm first, then follow `SYSTEM.md`.
-- **Organize [topic] notes** - follow `SYSTEM.md`; do not alter authoritative `main` state.
+- **Forget [topic]** - confirm first, then follow `procedures/commands.md`.
+- **Organize [topic] notes** - follow `procedures/commands.md`; do not alter authoritative `main` state.
 
 ## Memory Rules
 
@@ -70,7 +70,7 @@ Before any command that writes or deletes, follow the relevant procedure in `SYS
 - Only the user's explicit authorization permits a memory write.
 - Authorization means one of: an explicit checkpoint command, an explicit confirmation of a checkpoint proposal, or a standing auto-checkpoint the user turned on for that topic.
 - A qualifying state change does **not** by itself authorize a write unless auto-checkpoint is on for that topic.
-- Auto-checkpoint covers only that topic's `state/<topic>.md` and its index row. Obsidian writes follow the topic's `Obsidian:` setting (see `SYSTEM.md` section 11). Everything else still needs explicit authorization.
+- Auto-checkpoint covers only that topic's `state/<topic>.md` and its index row. Obsidian writes follow the topic's `Obsidian:` setting. Everything else still needs explicit authorization.
 - Context-risk warnings never authorize writes.
 - Make the smallest necessary change.
 - Never store passwords, keys, tokens, payment credentials, or other secrets.
