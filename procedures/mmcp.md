@@ -24,7 +24,7 @@ After the user authorizes the underlying memory change:
 4. Reorganize Obsidian paths when needed so historical material remains discoverable under the new topic structure. Renames/moves must preserve the historical content.
 5. Create or update an Obsidian summary only when it materially improves navigation or preserves useful provenance.
 6. Update `index.md` and authoritative state files when routing, status, or topic meaning changed.
-7. Record the structural change as a concise maintenance milestone in `state/memory-system-redesign.md`.
+7. Record the structural change in the commit message (what changed and why). Do not create or update a separate maintenance-log file.
 8. Verify both the authoritative `main` paths and all affected Obsidian paths by read-back.
 9. Report the change and verification status briefly.
 
@@ -32,4 +32,4 @@ After the user authorizes the underlying memory change:
 
 MMCP does not create a new permission to write. The user's authorization for the underlying memory change authorizes the required MMCP maintenance for that same change. Do not use MMCP to make unrelated memory writes.
 
-If an affected Obsidian history path does not exist, do not invent history. Record only that the path was absent when useful for the maintenance milestone.
+If an affected Obsidian history path does not exist, do not invent history. Record only that the path was absent in the commit message when useful.
