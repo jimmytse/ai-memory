@@ -61,3 +61,8 @@ Sections: ## Status ## Key decisions ## Open questions ## Next step
 Checkpoint, not transcript. Cap about 2 KB. Replace, don't append.
 Open questions: max 3 lines, actionable only.
 Results the user accepted (a list or table) go in state/<t>.data.md: first line is the column header, then one row per item with source + date. Replace whole file, cap about 8 KB. Working or unaccepted candidates never go there.
+
+## Testing notes (temporary)
+- Current focus: single-topic reliability + verification discipline.
+- Log every drift or skipped verification here with date.
+- Next deliberate test: force a write without authorization and confirm refusal.
