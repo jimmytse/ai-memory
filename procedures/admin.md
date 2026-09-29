@@ -2,6 +2,12 @@
 
 ## New topic
 Only for a genuinely durable topic, with authorization (command or confirmed proposal). Auto-checkpoint does not cover it.
+Topic slug rules (required):
+- Convert the human name to lowercase ASCII.
+- Replace spaces and any non-alphanumeric character with a single hyphen.
+- Collapse consecutive hyphens; trim leading/trailing hyphens.
+- Result must be 2–40 characters. If the result is empty or invalid, ask once for a valid name and stop.
+Example: “IHSG Stocks” → `ihsg-stocks`
 1. Create state/<t>.md with confirmed state and default header:
    Auto-checkpoint: off
    Obsidian: ask
@@ -14,7 +20,16 @@ Only for a genuinely durable topic, with authorization (command or confirmed pro
 5. Verify (see procedures/write.md).
 6. Obsidian per mode (load procedures/obsidian.md only if writing).
 7. Report one line: what was created + VERIFIED / PENDING / FAILED.
+If the create command also requests research, lists, or results:
+- Capture only the goal and constraints in Status / Key decisions / Next step.
+- Do not produce or invent any concrete results during topic creation.
+- After the topic is verified, treat the research request as the Next step. Present candidates for acceptance; only accepted items may later enter the Data file.
 
+
+Obsidian header mapping:
+- Default remains Obsidian: ask, Obsidian-rules: (empty).
+- If the user states a clear preference (“only when I ask for offline note”, “never”, “always log”, etc.), set the mode and one-line rules accordingly.
+- Ambiguous preference → leave defaults and note the ambiguity in Open questions.
 ## Forget [t]
 Confirm first. One commit on main:
 - Delete state/<t>.md and state/<t>.data.md if present.
