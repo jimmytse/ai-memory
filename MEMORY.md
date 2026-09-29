@@ -35,7 +35,7 @@ Conflict or unclear intent: ask, don't guess.
 - Durable change and no authorization: propose once, "Checkpoint-worthy: <line>. Save?", then wait.
 - Smallest necessary change.
 - Open questions in state: only what's needed to resume, max 3 lines, must be actionable. Other unresolved points stay in chat.
-- Dates: use the platform's date if known, else ask the user once. Never guess.
+- Dates: use the platform's date if known. If the chat UI exposes no reliable date, use the commit timestamp of the last successful write on main as provisional and mark it `provisional`. Convert to a confirmed date only on the next user-visible checkpoint. Never invent a calendar date.
 - Repo is public: never store secrets (passwords, keys, tokens, payment info) or personal/sensitive data.
 - Never claim a write succeeded unless verified. Never claim exact token counts without a reliable measure.
 - Context-risk warnings never authorize writes.
@@ -59,6 +59,7 @@ Data: <path> (optional)
 
 Sections: ## Status ## Key decisions ## Open questions ## Next step
 Checkpoint, not transcript. Cap about 2 KB. Replace, don't append.
+
 Open questions: max 3 lines, actionable only.
 Results the user accepted (a list or table) go in state/<t>.data.md: first line is the column header, then one row per item with source + date. Replace whole file, cap about 8 KB. Working or unaccepted candidates never go there.
 
