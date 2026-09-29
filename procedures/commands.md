@@ -31,10 +31,12 @@ Confirm first. Then:
 Do not recreate deleted topic without new durable authorized checkpoint.
 
 ### Organize [topic] notes
-Rebuild/update:
-`obsidian/topics/<topic>.summary.md`
-from raw Obsidian history.
-Do not silently change main state. Raw history remains intact.
+Produce or update the Obsidian summary for the topic using the delta rules in `procedures/obsidian.md`.
+- Use `Last-summarized` from the state file to avoid re-summarizing old material.
+- Append (or update the summary file) only the new material.
+- After verified write, update `Last-summarized` on the state file to today.
+- Do not alter other authoritative state content.
+Raw history remains intact.
 
 ## New Topics
 When a genuinely durable topic begins:
