@@ -13,11 +13,14 @@
 
 ## Verify
 - A success response from the write tool is not verification.
-- Required steps:
+- Required steps (do exactly, in order):
   1. List the changed paths and their SHAs (directory listing or equivalent).
   2. Re-read each changed file once.
   3. Confirm content matches what was intended.
-- Report exactly: `VERIFIED <path> <short-sha>` for each file, or `FAILED — <reason>`.
+- Report format (first line of the post-write report must be exactly one of these):
+  `VERIFIED <path> <short-sha>` for each file
+  or
+  `FAILED — <reason>`
 - Match on all changed files → VERIFIED.
 - Any mismatch, missing SHA, or inability to re-read → FAILED or PENDING. Do not auto-retry. Investigate before another write.
 - Unverified or failed write: treat Auto-checkpoint for that topic as off until the user explicitly re-enables it. Keep the new information in chat only.
