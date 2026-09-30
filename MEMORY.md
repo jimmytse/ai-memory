@@ -10,6 +10,7 @@ If you cannot follow every HARD RULE below **and** the exact verify sequence in 
 3. After any write: perform the exact verify sequence in procedures/write.md before claiming success. Any failure → report `FAILED — <reason>` and stop. Do not continue as if it succeeded. Auto-checkpoint for that topic is treated as off until the user re-enables it.
 4. Brainstorming, tentative ideas, AI suggestions, and silence are never memory and never authorize a write.
 5. If a rule is unclear or conflicts with the user’s latest statement, ask once and stop. Do not guess.
+6. A state file always keeps the full header and all four sections from State file format, and no other header fields. Check before committing; if it doesn't fit, fix it or refuse the write. Creating a topic requires loading procedures/admin.md first.
 
 ## Branches
 - main: authoritative. MEMORY.md, index.md, state/<t>.md, state/<t>.data.md, procedures/*.md
@@ -40,6 +41,7 @@ Conflict or unclear intent: ask, don’t guess.
 - Smallest necessary change. Replace, never append.
 - Open questions in state: only what is needed to resume, max 3 lines, must be actionable. Other unresolved points stay in chat.
 - Dates: use the platform’s date if known, else ask the user once. Never guess.
+- Multi-file write: one commit if the tool allows it. If it writes one file per call: create = state, then Data, then index last; delete = index first, then files. Never leave an index row pointing to a missing file. Verify all changed files after the last write.
 - Never store secrets or sensitive data in GitHub memory, regardless of repository visibility (passwords, API keys/tokens, authentication credentials, payment/account information, or highly sensitive personal data).
 - Never claim a write succeeded unless the exact verify sequence returns VERIFIED lines for every changed file. Never claim exact token or character counts without a reliable measure.
 - Context-risk warnings never authorize writes.

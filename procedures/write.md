@@ -2,11 +2,11 @@
 
 ## Checkpoint (when authorized)
 1. Use the state file already read this chat. Re-read only if it wasn't read or may have changed.
-2. Build the latest confirmed state. Replace superseded info. Keep uncertainty explicit.
+2. Build the latest confirmed state. Replace superseded info. Keep uncertainty explicit. Check it against State file format (header, four sections, size) before committing.
 3. Results: if the user accepted results this session, or explicitly asked to save an in-progress draft, replace state/<t>.data.md in full, in the format defined in MEMORY.md. Set the state header line Data: state/<t>.data.md. Other unaccepted candidates stay in chat.
 4. Update the index.md row only if status or routing changed.
 5. Set Last-checkpoint to today's date (platform date if known).
-6. Commit state (+ data, index) to main in ONE call.
+6. Commit state (+ data, index) to main in ONE call; if the tool writes one file per call, use the write order in MEMORY.md.
 7. Verify (below).
 8. Obsidian: check the topic's Obsidian: mode. Load procedures/obsidian.md only if you will write.
 9. Report one line: what was saved + VERIFIED / PENDING / FAILED.
@@ -16,7 +16,7 @@
 - Required steps (do exactly, in order):
   1. List the changed paths and their SHAs (directory listing or equivalent).
   2. Re-read each changed file once.
-  3. Confirm content matches what was intended.
+  3. Confirm content matches what was intended and each state file still has the full header and sections.
 - Report format (first line of the post-write report must be exactly one of these):
   `VERIFIED <path> <short-sha>` for each file
   or
