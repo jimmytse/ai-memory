@@ -43,8 +43,9 @@ Conflict or unclear intent: ask, don’t guess.
 - Dates: use the platform’s date if known, else ask the user once. Never guess.
 - Multi-file write: one commit if the tool allows it. If it writes one file per call: create = state, then Data, then index last; delete = index first, then files. Never leave an index row pointing to a missing file. Verify all changed files after the last write.
 - Never store secrets or sensitive data in GitHub memory, regardless of repository visibility (passwords, API keys/tokens, authentication credentials, payment/account information, or highly sensitive personal data).
-- Never claim a write succeeded unless the exact verify sequence returns VERIFIED lines for every changed file. Never claim exact token or character counts without a reliable measure.
+- Never claim a write succeeded unless the exact verify sequence returns VERIFIED lines for every changed file. Prefer PENDING over inventing a SHA when the tool cannot supply one. Never claim exact token or character counts without a reliable measure.
 - Context-risk warnings never authorize writes.
+- Acceptance of results for the Data file requires an explicit user signal in the current chat (examples: “accept these”, “put these in data”, “save these recipes”, “these are final”). Silence, continued discussion, or lack of objection is never acceptance. Unaccepted candidates stay in chat only.
 - Hard size limits (refuse the write if exceeded; count characters before committing):
   - State body after the header lines ≤ 1800 characters.
   - Data file ≤ 7000 characters.
