@@ -3,7 +3,7 @@
 ## Checkpoint (when authorized)
 1. Use the state file already read this chat. Re-read only if it wasn't read or may have changed.
 2. Build the latest confirmed state. Replace superseded info. Keep uncertainty explicit.
-3. Results: if the user accepted results this session, replace state/<t>.data.md in full. First line is the column header, then one row per item with source + date. Cap about 8 KB; over it, keep current rows and move history to an obsidian log. Set the state header line Data: state/<t>.data.md. Unaccepted candidates stay in chat.
+3. Results: if the user accepted results this session, replace state/<t>.data.md in full, in the format defined in MEMORY.md. Set the state header line Data: state/<t>.data.md. Unaccepted candidates stay in chat.
 4. Update the index.md row only if status or routing changed.
 5. Set Last-checkpoint to today's date (platform date if known).
 6. Commit state (+ data, index) to main in ONE call.
