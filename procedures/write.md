@@ -17,13 +17,23 @@
   1. List the changed paths and their SHAs (directory listing or equivalent).
   2. Re-read each changed file once.
   3. Confirm content matches what was intended and each state file still has the full header and sections.
+- Verification outcomes (use exactly one per changed file):
+  - `VERIFIED <path> <short-sha>`
+    Full check succeeded: listing returned the path + SHA, re-read matched intended content, and state files still have the complete header + four sections.
+  - `PENDING <path> (no-sha | partial-listing)`
+    Re-read of the file succeeded and content matches what was intended (including header/sections for state files), but SHA was unavailable or the directory listing was incomplete. Do not invent a SHA.
+  - `FAILED — <reason>`
+    Content mismatch, inability to re-read, or any other hard failure.
 - Report format (first line of the post-write report must be exactly one of these):
   `VERIFIED <path> <short-sha>` for each file
   or
+  `PENDING <path> (no-sha | partial-listing)` for each file
+  or
   `FAILED — <reason>`
 - Match on all changed files → VERIFIED.
-- Any mismatch, missing SHA, or inability to re-read → FAILED or PENDING. Do not auto-retry. Investigate before another write.
+- Any PENDING or FAILED → treat Auto-checkpoint for that topic as off until the user explicitly re-enables it. Keep the new information in chat only. Do not treat a PENDING write as authoritative for future sessions until a later VERIFIED write confirms it.
 - Unverified or failed write: treat Auto-checkpoint for that topic as off until the user explicitly re-enables it. Keep the new information in chat only.
+- Do not auto-retry. Investigate before another write.
 
 ## Auto-checkpoint
 - Off by default. Only the user command "Auto-checkpoint [t] on/off" changes it, by editing that one header line. Needs an existing state file, else say a checkpoint is needed first. Verify.
