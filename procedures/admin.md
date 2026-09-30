@@ -14,14 +14,14 @@ Example: “IHSG Stocks” → `ihsg-stocks`
    Obsidian-rules: 
    Last-checkpoint: none
    Last-summarized: none
-2. Add index.md row.
+2. Add index.md row (Status: active, one-line Purpose).
 3. No other files; the Data file state/<t>.data.md is created later, at the first accepted results.
 4. Commit state + index to main in ONE call.
 5. Verify (see procedures/write.md).
 6. Obsidian per mode (load procedures/obsidian.md only if writing).
 7. Report one line: what was created + VERIFIED / PENDING / FAILED.
 If the create command also requests research, lists, or results:
-- Capture only the goal and constraints in Status / Key decisions / Next step.
+- Capture only the goal and constraints in Now / Key decisions / Next step.
 - Do not produce or invent any concrete results during topic creation.
 - After the topic is verified, treat the research request as the Next step. Present candidates for acceptance; only accepted items may later enter the Data file.
 

@@ -5,8 +5,8 @@ Last-checkpoint: 2026-09-30
 Last-summarized: none
 Data: state/biblical-recipes.data.md
 
-## Status
-ACTIVE — Develop truthful, nutritious, practical modern recipes inspired by biblical or biblical-era foods, adapted to ingredients readily available and preferably growable in Indonesia. Accepted so far (2, in Data file): Ezekiel 4:9 whole-grain/legume bread; Genesis 25:34 mung-bean stew.
+## Now
+Develop truthful, nutritious, practical modern recipes inspired by biblical or biblical-era foods, adapted to ingredients readily available and preferably growable in Indonesia. Accepted so far (2, in Data file): Ezekiel 4:9 whole-grain/legume bread; Genesis 25:34 mung-bean stew.
 
 ## Key decisions
 - Always distinguish biblical text, historical interpretation, scientific evidence, and modern adaptation. Never present modern recipes as literal biblical recipes when the Bible does not give a complete recipe.

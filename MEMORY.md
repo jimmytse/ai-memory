@@ -65,7 +65,8 @@ Last-checkpoint: none|YYYY-MM-DD
 Last-summarized: none|YYYY-MM-DD
 Data: <path> (optional)
 
-Sections: ## Status ## Key decisions ## Open questions ## Next step
+Sections: ## Now ## Key decisions ## Open questions ## Next step
+Topic lifecycle (active|paused|completed|archived, default active) lives only in the index.md Status column, not in state files.
 Checkpoint, not transcript. Cap about 2 KB. Replace, don’t append.
 Open questions: max 3 lines, actionable only.
 Results the user accepted (list, table, or complete items such as recipes) go in state/<t>.data.md. First line: the column header, or a one-line description of the item format. Then one entry per item with source + date. Replace whole file. Hard cap 7000 characters; over it, keep current items and move history to an obsidian log. Working or unaccepted candidates never go there.
