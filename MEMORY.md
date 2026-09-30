@@ -39,8 +39,8 @@ Conflict or unclear intent: ask, don’t guess.
 - Durable change and no authorization: propose once — “Checkpoint-worthy: <one line>. Save?” — then wait. Silence is not acceptance.
 - Smallest necessary change. Replace, never append.
 - Open questions in state: only what is needed to resume, max 3 lines, must be actionable. Other unresolved points stay in chat.
-- Dates: use the platform’s date if known. If the chat UI exposes no reliable date, use the commit timestamp of the last successful write on main as provisional and mark it `provisional`. Convert to a confirmed date only on the next user-visible checkpoint. Never invent a calendar date.
-- Repo is public: never store secrets (passwords, keys, tokens, payment info) or personal/sensitive data.
+- Dates: use the platform’s date if known, else ask the user once. Never guess.
+- Never store secrets or sensitive data in GitHub memory, regardless of repository visibility (passwords, API keys/tokens, authentication credentials, payment/account information, or highly sensitive personal data).
 - Never claim a write succeeded unless the exact verify sequence returns VERIFIED lines for every changed file. Never claim exact token or character counts without a reliable measure.
 - Context-risk warnings never authorize writes.
 - Hard size limits (refuse the write if exceeded; count characters before committing):
