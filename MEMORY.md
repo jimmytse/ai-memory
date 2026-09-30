@@ -1,11 +1,15 @@
 # MEMORY
 AI-only memory. Read this first in every fresh chat.
 
+## BOOT (read first, refuse if you cannot obey)
+If you cannot follow every HARD RULE below **and** the exact verify sequence in procedures/write.md, refuse any write and say so in one line. Do not partially comply. Do not invent, append, or claim success without the required VERIFIED lines.
+
 ## HARD RULES (never override)
-1. Write to main only with explicit authorization or standing Auto-checkpoint.
-2. Never invent decisions, quantities, status, or results.
-3. After any write: verify before claiming success. If verification fails → report FAILED and stop. Do not continue as if it succeeded.
-4. Brainstorming, tentative ideas, and AI suggestions are never memory.
+1. Write to main only with explicit authorization or standing Auto-checkpoint for that topic.
+2. Never invent decisions, quantities, status, results, dates, or SHAs.
+3. After any write: perform the exact verify sequence in procedures/write.md before claiming success. Any failure → report `FAILED — <reason>` and stop. Do not continue as if it succeeded. Auto-checkpoint for that topic is treated as off until the user re-enables it.
+4. Brainstorming, tentative ideas, AI suggestions, and silence are never memory and never authorize a write.
+5. If a rule is unclear or conflicts with the user’s latest statement, ask once and stop. Do not guess.
 
 ## Branches
 - main: authoritative. MEMORY.md, index.md, state/<t>.md, state/<t>.data.md, procedures/*.md
@@ -17,28 +21,32 @@ AI-only memory. Read this first in every fresh chat.
 2. Topic named: read only state/<t>.md (its Data file only if the task needs the results). Else: read only index.md.
 3. Output one compliance line at the start of the first reply when a topic is active:
    `State: <t> | Auto: on/off | Last-checkpoint: <date or none>`
-4. Resume from the state. Don't make the user repeat recorded info.
-5. Don't read obsidian unless asked or clearly needed.
-Stop as soon as you can answer.
+4. Resume from the state. Don’t make the user repeat recorded info.
+5. Don’t read obsidian unless asked or clearly needed.
+6. Stop as soon as you can answer. Do not load extra procedures or files “just in case.”
 
 ## Precedence
-1. User's latest statement in this chat.
+1. User’s latest statement in this chat.
 2. state/<t>.md.
 3. Earlier state.
 4. Obsidian.
-Detail or recency of a document doesn't override confirmed state.
-Conflict or unclear intent: ask, don't guess.
+Detail or recency of a document doesn’t override confirmed state.
+Conflict or unclear intent: ask, don’t guess.
 
 ## Write rules
 - Write only with authorization: explicit command, confirmed proposal, or standing Auto-checkpoint on for that topic.
-- Durable = confirmed and affects future work. Otherwise stay in chat.
-- Durable change and no authorization: propose once, "Checkpoint-worthy: <line>. Save?", then wait.
-- Smallest necessary change.
-- Open questions in state: only what's needed to resume, max 3 lines, must be actionable. Other unresolved points stay in chat.
-- Dates: use the platform's date if known. If the chat UI exposes no reliable date, use the commit timestamp of the last successful write on main as provisional and mark it `provisional`. Convert to a confirmed date only on the next user-visible checkpoint. Never invent a calendar date.
+- Durable = confirmed by the user and affects future work. Otherwise stay in chat.
+- Durable change and no authorization: propose once — “Checkpoint-worthy: <one line>. Save?” — then wait. Silence is not acceptance.
+- Smallest necessary change. Replace, never append.
+- Open questions in state: only what is needed to resume, max 3 lines, must be actionable. Other unresolved points stay in chat.
+- Dates: use the platform’s date if known. If the chat UI exposes no reliable date, use the commit timestamp of the last successful write on main as provisional and mark it `provisional`. Convert to a confirmed date only on the next user-visible checkpoint. Never invent a calendar date.
 - Repo is public: never store secrets (passwords, keys, tokens, payment info) or personal/sensitive data.
-- Never claim a write succeeded unless verified. Never claim exact token counts without a reliable measure.
+- Never claim a write succeeded unless the exact verify sequence returns VERIFIED lines for every changed file. Never claim exact token or character counts without a reliable measure.
 - Context-risk warnings never authorize writes.
+- Hard size limits (refuse the write if exceeded; count characters before committing):
+  - State body after the header lines ≤ 1800 characters.
+  - Data file ≤ 7000 characters.
+  Estimate is acceptable only when the tool cannot provide an exact count; prefer exact.
 
 ## Procedure map (load only the one needed)
 - checkpoint, save, auto-checkpoint, verify, failure: procedures/write.md
@@ -58,10 +66,6 @@ Last-summarized: none|YYYY-MM-DD
 Data: <path> (optional)
 
 Sections: ## Status ## Key decisions ## Open questions ## Next step
-Checkpoint, not transcript. Cap about 2 KB. Replace, don't append.
-Hard size limits (refuse the write if exceeded):
-- State body after the header lines ≤ 1800 characters.
-- Data file ≤ 7000 characters.
-Count characters before committing. Estimate is acceptable; exact count preferred when the tool can provide it.
+Checkpoint, not transcript. Cap about 2 KB. Replace, don’t append.
 Open questions: max 3 lines, actionable only.
 Results the user accepted (list, table, or complete items such as recipes) go in state/<t>.data.md. First line: the column header, or a one-line description of the item format. Then one entry per item with source + date. Replace whole file. Hard cap 7000 characters; over it, keep current items and move history to an obsidian log. Working or unaccepted candidates never go there.
