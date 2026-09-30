@@ -8,34 +8,46 @@ Topic slug rules (required):
 - Collapse consecutive hyphens; trim leading/trailing hyphens.
 - Result must be 2–40 characters. If the result is empty or invalid, ask once for a valid name and stop.
 Example: “IHSG Stocks” → `ihsg-stocks`
-1. Create state/<t>.md with confirmed state and default header:
+1. Create state/<t>.md by copying this skeleton exactly, then fill only the section bodies. Add `Data: state/<t>.data.md` only when the Data file is created.
    Auto-checkpoint: off
    Obsidian: ask
    Obsidian-rules: 
    Last-checkpoint: none
    Last-summarized: none
+
+   ## Now
+   <one or two lines>
+
+   ## Key decisions
+   - <confirmed decisions only>
+
+   ## Open questions
+   - <max 3 lines, actionable; or "None recorded.">
+
+   ## Next step
+   <one line>
 2. Add index.md row (Status: active, one-line Purpose).
 3. No other files; the Data file state/<t>.data.md is created later, at the first accepted results.
 4. Commit state + index to main in ONE call; if one file per call, state first, index last (MEMORY.md write order).
 5. Verify (see procedures/write.md).
 6. Obsidian per mode (load procedures/obsidian.md only if writing).
-7. Report one line: what was created + VERIFIED / PENDING / FAILED.
+7. Report one line: what was created + VERIFIED / FAILED.
 If the create command also requests research, lists, or results:
 - Capture only the goal and constraints in Now / Key decisions / Next step.
 - Do not produce or invent any concrete results during topic creation.
 - After the topic is verified, treat the research request as the Next step. Present candidates for acceptance; only accepted items may later enter the Data file.
 
-
 Obsidian header mapping:
 - Default remains Obsidian: ask, Obsidian-rules: (empty).
 - If the user states a clear preference (“only when I ask for offline note”, “never”, “always log”, etc.), set the mode and one-line rules accordingly.
 - Ambiguous preference → leave defaults and note the ambiguity in Open questions.
+
 ## Forget [t]
 Confirm first. One commit on main (if one file per call: index row first, then the files):
 - Delete state/<t>.md and state/<t>.data.md if present.
 - Remove the index.md row.
 Leave obsidian and Git history unless the user explicitly asks to delete them too.
-Verify the paths are gone (listing + SHA check). Don't recreate without a new authorized checkpoint.
+Verify the paths are gone (listing, or the read fails). Don't recreate without a new authorized checkpoint.
 Report: Forgotten + VERIFIED / FAILED.
 
 ## Structural change
@@ -47,5 +59,5 @@ Only after the user authorizes the underlying change. No new write permission. N
 4. Make an obsidian summary only if it helps navigation or provenance.
 5. Update index.md and state files for changed routing, status, or meaning. Set Last-checkpoint on any modified state file. One commit on main (or the MEMORY.md write order).
 6. Put what changed and why in the commit message. No separate log file.
-7. Verify main and (if touched) obsidian paths by SHA/listing. Report briefly.
+7. Verify main and (if touched) obsidian paths (re-read; listing if available). Report briefly.
 Missing obsidian path: don't invent history; note the absence in the commit message when useful.

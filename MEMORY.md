@@ -2,12 +2,12 @@
 AI-only memory. Read this first in every fresh chat.
 
 ## BOOT (read first, refuse if you cannot obey)
-If you cannot follow every HARD RULE below **and** the exact verify sequence in procedures/write.md, refuse any write and say so in one line. Do not partially comply. Do not invent, append, or claim success without the required VERIFIED lines.
+If you cannot follow every HARD RULE below **and** the Verify steps in procedures/write.md, refuse any write and say so in one line. Do not partially comply.
 
 ## HARD RULES (never override)
-1. Write to main only with explicit authorization or standing Auto-checkpoint for that topic.
+1. Write to main only with authorization: an explicit command, a confirmed proposal, or a standing Auto-checkpoint for that topic.
 2. Never invent decisions, quantities, status, results, dates, or SHAs.
-3. After any write: perform the exact verify sequence in procedures/write.md before claiming success. Any failure → report `FAILED — <reason>` and stop. Do not continue as if it succeeded. Auto-checkpoint for that topic is treated as off until the user re-enables it.
+3. After any write, run Verify (procedures/write.md) before claiming success. Never claim success without a VERIFIED line for every changed file. On FAILED, report it and stop; Auto-checkpoint for that topic is off until the user re-enables it.
 4. Brainstorming, tentative ideas, AI suggestions, and silence are never memory and never authorize a write.
 5. If a rule is unclear or conflicts with the user’s latest statement, ask once and stop. Do not guess.
 6. A state file always keeps the full header and all four sections from State file format, and no other header fields. Check before committing; if it doesn't fit, fix it or refuse the write. Creating a topic requires loading procedures/admin.md first.
@@ -35,21 +35,19 @@ Detail or recency of a document doesn’t override confirmed state.
 Conflict or unclear intent: ask, don’t guess.
 
 ## Write rules
-- Write only with authorization: explicit command, confirmed proposal, or standing Auto-checkpoint on for that topic.
 - Durable = confirmed by the user and affects future work. Otherwise stay in chat.
-- Durable change and no authorization: propose once — “Checkpoint-worthy: <one line>. Save?” — then wait. Silence is not acceptance.
+- Durable change and no authorization: propose once — “Checkpoint-worthy: <one line>. Save?” — then wait.
 - Smallest necessary change. Replace, never append.
 - Open questions in state: only what is needed to resume, max 3 lines, must be actionable. Other unresolved points stay in chat.
 - Dates: use the platform’s date if known, else ask the user once. Never guess.
 - Multi-file write: one commit if the tool allows it. If it writes one file per call: create = state, then Data, then index last; delete = index first, then files. Never leave an index row pointing to a missing file. Verify all changed files after the last write.
 - Never store secrets or sensitive data in GitHub memory, regardless of repository visibility (passwords, API keys/tokens, authentication credentials, payment/account information, or highly sensitive personal data).
-- Never claim a write succeeded unless the exact verify sequence returns VERIFIED lines for every changed file. Prefer PENDING over inventing a SHA when the tool cannot supply one. Never claim exact token or character counts without a reliable measure.
 - Context-risk warnings never authorize writes.
 - Acceptance of results for the Data file requires an explicit user signal in the current chat (examples: “accept these”, “put these in data”, “save these recipes”, “these are final”). Silence, continued discussion, or lack of objection is never acceptance. Unaccepted candidates stay in chat only.
 - Hard size limits (refuse the write if exceeded; count characters before committing):
   - State body after the header lines ≤ 1800 characters.
-  - Data file ≤ 7000 characters.
-  Estimate is acceptable only when the tool cannot provide an exact count; prefer exact.
+  - Data file ≤ 7000 characters. Over it: keep current items, move history to an obsidian log.
+  Estimate is acceptable only when the tool cannot provide an exact count; prefer exact. Never state exact token or character counts without a reliable measure.
 
 ## Procedure map (load only the one needed)
 - checkpoint, save, auto-checkpoint, verify, failure: procedures/write.md
@@ -70,6 +68,6 @@ Data: <path> (optional)
 
 Sections: ## Now ## Key decisions ## Open questions ## Next step
 Topic lifecycle (active|paused|completed|archived, default active) lives only in the index.md Status column, not in state files.
-Checkpoint, not transcript. Cap about 2 KB. Replace, don’t append.
+Checkpoint, not transcript. Replace, don’t append.
 Open questions: max 3 lines, actionable only.
-Results the user accepted (list, table, or complete items such as recipes) go in state/<t>.data.md. First line: the column header, or a one-line description of the item format. Then one entry per item with source + date. Replace whole file. Hard cap 7000 characters; over it, keep current items and move history to an obsidian log. Working or unaccepted candidates never go there. Exception: a draft the user explicitly asks to save so work can resume (for example, the chat is about to hit its limit). Label the entry [draft], keep one draft at a time, and say in the state Next step that a draft is waiting. Once finished it becomes accepted, or moves to an obsidian log.
+Results the user accepted (list, table, or complete items such as recipes) go in state/<t>.data.md. First line: the column header, or a one-line description of the item format. Then one entry per item with source + date. Replace whole file. Working or unaccepted candidates never go there. Exception: a draft the user explicitly asks to save so work can resume (for example, the chat is about to hit its limit). Label the entry [draft], keep one draft at a time, and say in the state Next step that a draft is waiting. Once finished it becomes accepted, or moves to an obsidian log.
